@@ -27,14 +27,13 @@ __fastcall TSettingsForm::TSettingsForm(TComponent* Owner)
 		MainForm->Domain = SelectDomain(Settings->ReadInteger("Main", "CountryIndex", 0));
 		bool minimized = false;
 		if (Settings->ReadBool("Main", "AutoMinimize", false) == true) minimized = true;
-		MainForm->OneStart(minimized);
+		MainForm->Start(minimized);
 		SettingsForm->Close();
 	}
 	else
 		SettingsForm->Visible = true;
 }
 //---------------------------------------------------------------------------
-
 void __fastcall TSettingsForm::SaveButtonClick(TObject *Sender)
 {
 	Settings = new TIniFile(ExtractFilePath(Application->ExeName) + "settings.ini");
@@ -56,7 +55,7 @@ void __fastcall TSettingsForm::SaveButtonClick(TObject *Sender)
 		reg->CloseKey();
 	}
 	MainForm->Domain = SelectDomain(CBox->ItemIndex);
-	MainForm->OneStart(false);
+	MainForm->Start(false);
 	SettingsForm->Close();
 }
 //---------------------------------------------------------------------------
@@ -76,6 +75,7 @@ String TSettingsForm::SelectDomain(int index)
 	return dm;
 }
 //---------------------------------------------------------------------------
+
 void __fastcall TSettingsForm::FormShow(TObject *Sender)
 {
 	Settings = new TIniFile(ExtractFilePath(Application->ExeName) + "settings.ini");
@@ -84,7 +84,6 @@ void __fastcall TSettingsForm::FormShow(TObject *Sender)
 	MinimizeBox->Checked = Settings->ReadBool("Main", "AutoMinimize", 0);
 }
 //---------------------------------------------------------------------------
-
 void __fastcall TSettingsForm::FormClose(TObject *Sender, TCloseAction &Action)
 {
 	if (Settings->ReadBool("Main", "Started", false) == false) {
@@ -92,4 +91,3 @@ void __fastcall TSettingsForm::FormClose(TObject *Sender, TCloseAction &Action)
 	}
 }
 //---------------------------------------------------------------------------
-

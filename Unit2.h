@@ -11,12 +11,12 @@
 class TSettingsForm : public TForm
 {
 __published:	// IDE-managed Components
-	TComboBox *CBox;
-	TButton *SaveButton;
-	TLabel *CountryNote;
 	TLabel *CountryLabel;
+	TComboBox *CBox;
 	TCheckBox *AutorunBox;
 	TCheckBox *MinimizeBox;
+	TButton *SaveButton;
+	TLabel *CountryNote;
 	void __fastcall SaveButtonClick(TObject *Sender);
 	void __fastcall FormShow(TObject *Sender);
 	void __fastcall FormClose(TObject *Sender, TCloseAction &Action);

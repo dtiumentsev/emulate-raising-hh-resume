@@ -1,4 +1,4 @@
-﻿//---------------------------------------------------------------------------
+//---------------------------------------------------------------------------
 
 #include <vcl.h>
 #pragma hdrstop
@@ -9,7 +9,6 @@
 #include "Unit2.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
-#pragma link "SHDocVw_OCX"
 #pragma resource "*.dfm"
 TMainForm *MainForm;
 
@@ -25,7 +24,7 @@ __fastcall TMainForm::TMainForm(TComponent* Owner)
 }
 //---------------------------------------------------------------------------
 
-void TMainForm::OneStart(bool minimized)
+void TMainForm::Start(bool minimized)
 {
 	MainForm->AlphaBlend = false;
 	ShowWeb();
@@ -61,7 +60,6 @@ void __fastcall TMainForm::StartTimerTimer(TObject *Sender)
 	}
 }
 //---------------------------------------------------------------------------
-
 void __fastcall TMainForm::MainTimerTimer(TObject *Sender)
 {
 	// переход в "Мои резюме"
@@ -91,7 +89,6 @@ void __fastcall TMainForm::MainTimerTimer(TObject *Sender)
 	}
 }
 //---------------------------------------------------------------------------
-
 void __fastcall TMainForm::LongTimerTimer(TObject *Sender)
 {
 	LongTimer->Enabled = false;
@@ -113,7 +110,6 @@ void TMainForm::ClearMemory()
     catch(...) {}
 }
 //---------------------------------------------------------------------------
-
 void __fastcall TMainForm::ApplicationEventsMinimize(TObject *Sender)
 {
 	Application->Minimize();
@@ -152,8 +148,9 @@ void TMainForm::HideWeb()
 }
 //---------------------------------------------------------------------------
 
+
 void __fastcall TMainForm::WebExecuteScript(TCustomEdgeBrowser *Sender, HRESULT AResult,
-		  const UnicodeString AResultObjectAsJson)
+          const UnicodeString AResultObjectAsJson)
 {
 	if (AResultObjectAsJson != 'null') {
 		if (Step == 0) {
@@ -221,6 +218,7 @@ void __fastcall TMainForm::WebExecuteScript(TCustomEdgeBrowser *Sender, HRESULT 
 	}
 }
 //---------------------------------------------------------------------------
+
 void __fastcall TMainForm::N1Click(TObject *Sender)
 {
     SettingsForm->Show();
