@@ -16,6 +16,7 @@ object MainForm: TMainForm
   Font.Style = []
   Menu = MainMenu
   Position = poScreenCenter
+  Visible = True
   TextHeight = 15
   object HelpLabel: TLabel
     Left = 8

@@ -1,4 +1,4 @@
-//---------------------------------------------------------------------------
+﻿//---------------------------------------------------------------------------
 
 #include <vcl.h>
 #pragma hdrstop
@@ -26,9 +26,9 @@ __fastcall TMainForm::TMainForm(TComponent* Owner)
 
 void TMainForm::Start(bool minimized)
 {
-	MainForm->AlphaBlend = false;
 	ShowWeb();
     MainForm->Position = poScreenCenter;
+	MainForm->AlphaBlend = false;
 
 	StatusBar->SimpleText = "Статус: открываю hh.ru ...";
 	Navigate(Domain + "locale?language=RU");
@@ -221,7 +221,8 @@ void __fastcall TMainForm::WebExecuteScript(TCustomEdgeBrowser *Sender, HRESULT 
 
 void __fastcall TMainForm::N1Click(TObject *Sender)
 {
-    SettingsForm->Show();
+	SettingsForm->Position = poMainFormCenter;
+	SettingsForm->ShowModal();
 }
 //---------------------------------------------------------------------------
 

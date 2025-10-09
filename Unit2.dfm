@@ -2,8 +2,8 @@ object SettingsForm: TSettingsForm
   Left = 0
   Top = 0
   BorderIcons = [biSystemMenu]
-  BorderStyle = bsDialog
-  Caption = 'SettingsForm'
+  BorderStyle = bsSingle
+  Caption = #1053#1072#1089#1090#1088#1086#1081#1082#1080
   ClientHeight = 192
   ClientWidth = 352
   Color = clBtnFace
@@ -12,13 +12,13 @@ object SettingsForm: TSettingsForm
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
-  Position = poScreenCenter
+  Position = poMainFormCenter
   OnClose = FormClose
   OnShow = FormShow
   TextHeight = 15
   object CountryLabel: TLabel
-    Left = 60
-    Top = 16
+    Left = 57
+    Top = 12
     Width = 41
     Height = 15
     Caption = #1057#1090#1088#1072#1085#1072':'
@@ -45,6 +45,7 @@ object SettingsForm: TSettingsForm
     Top = 8
     Width = 184
     Height = 23
+    Style = csDropDownList
     ItemIndex = 0
     TabOrder = 0
     Text = #1056#1086#1089#1089#1080#1103' (hh.ru)'
@@ -60,7 +61,7 @@ object SettingsForm: TSettingsForm
   object AutorunBox: TCheckBox
     Left = 57
     Top = 37
-    Width = 236
+    Width = 234
     Height = 17
     Alignment = taLeftJustify
     Caption = #1047#1072#1087#1091#1089#1082#1072#1090#1100' '#1087#1088#1080' '#1089#1090#1072#1088#1090#1077' '#1089#1080#1089#1090#1077#1084#1099
@@ -75,7 +76,7 @@ object SettingsForm: TSettingsForm
   object MinimizeBox: TCheckBox
     Left = 57
     Top = 60
-    Width = 236
+    Width = 234
     Height = 17
     Alignment = taLeftJustify
     Caption = #1057#1074#1086#1088#1072#1095#1080#1074#1072#1090#1100' '#1074' '#1090#1088#1077#1081' '#1087#1088#1080' '#1079#1072#1087#1091#1089#1082#1077
@@ -88,9 +89,9 @@ object SettingsForm: TSettingsForm
     TabOrder = 2
   end
   object SaveButton: TButton
-    Left = 88
+    Left = 125
     Top = 96
-    Width = 177
+    Width = 100
     Height = 25
     Caption = #1057#1086#1093#1088#1072#1085#1080#1090#1100
     TabOrder = 3
