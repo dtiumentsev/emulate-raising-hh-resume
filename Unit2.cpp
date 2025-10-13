@@ -29,11 +29,13 @@ __fastcall TSettingsForm::TSettingsForm(TComponent* Owner)
 		if (Settings->ReadBool("Main", "AutoMinimize", false) == true) minimized = true;
 		MainForm->Start(minimized);
 		SettingsForm->Close();
-	}
-	else
+	} else {
 		SettingsForm->Visible = true;
+	}
+
 }
 //---------------------------------------------------------------------------
+
 void __fastcall TSettingsForm::SaveButtonClick(TObject *Sender)
 {
 	Settings = new TIniFile(ExtractFilePath(Application->ExeName) + "settings.ini");
@@ -62,15 +64,15 @@ void __fastcall TSettingsForm::SaveButtonClick(TObject *Sender)
 
 String TSettingsForm::SelectDomain(int index)
 {
-	String dm = "https://hh.ru/";
+	String dm = "https://hh.ru";
 	switch (index) {
-		case 0:  dm = "https://hh.ru/"; break;
-		case 1:  dm = "https://hh.kz/"; break;
-		case 2:  dm = "https://rabota.by/"; break;
-		case 3:  dm = "https://hh.uz/"; break;
-		case 4:  dm = "https://hh1.az/"; break;
-		case 5:  dm = "https://headhunter.ge/"; break;
-		case 6:  dm = "https://headhunter.kg/"; break;
+		case 0:  dm = "https://hh.ru"; break;
+		case 1:  dm = "https://hh.kz"; break;
+		case 2:  dm = "https://rabota.by"; break;
+		case 3:  dm = "https://hh.uz"; break;
+		case 4:  dm = "https://hh1.az"; break;
+		case 5:  dm = "https://headhunter.ge"; break;
+		case 6:  dm = "https://headhunter.kg"; break;
 	}
 	return dm;
 }
@@ -84,6 +86,7 @@ void __fastcall TSettingsForm::FormShow(TObject *Sender)
 	MinimizeBox->Checked = Settings->ReadBool("Main", "AutoMinimize", 0);
 }
 //---------------------------------------------------------------------------
+
 void __fastcall TSettingsForm::FormClose(TObject *Sender, TCloseAction &Action)
 {
 	if (Settings->ReadBool("Main", "Started", false) == false) {

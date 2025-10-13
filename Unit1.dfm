@@ -18,20 +18,12 @@ object MainForm: TMainForm
   Position = poScreenCenter
   Visible = True
   TextHeight = 15
-  object HelpLabel: TLabel
-    Left = 8
-    Top = 5
-    Width = 445
-    Height = 15
-    Caption = 
-      #1040#1074#1090#1086#1088#1080#1079#1091#1081#1090#1077#1089#1100' '#1085#1072' '#1089#1072#1081#1090#1077' '#1074' '#1084#1080#1085#1080'-'#1073#1088#1072#1091#1079#1077#1088#1077', '#1087#1086#1089#1083#1077' '#1095#1077#1075#1086' '#1087#1088#1086#1075#1088#1072#1084#1084#1072' '#1085#1072#1095 +
-      #1085#1077#1090' '#1088#1072#1073#1086#1090#1091'.'
-  end
   object Web: TEdgeBrowser
-    Left = 402
-    Top = 39
-    Width = 50
-    Height = 33
+    Left = 0
+    Top = 0
+    Width = 460
+    Height = 73
+    Align = alClient
     TabOrder = 0
     AllowSingleSignOnUsingOSPrimaryAccount = False
     TargetCompatibleBrowserVersion = '137.0.3296.44'
@@ -48,32 +40,29 @@ object MainForm: TMainForm
   end
   object MainMenu: TMainMenu
     Left = 24
-    Top = 24
+    Top = 8
     object N1: TMenuItem
       Caption = #1053#1072#1089#1090#1088#1086#1081#1082#1080
       OnClick = N1Click
     end
-  end
-  object StartTimer: TTimer
-    Enabled = False
-    Interval = 3000
-    OnTimer = StartTimerTimer
-    Left = 88
-    Top = 24
+    object N2: TMenuItem
+      Caption = #1055#1086#1082#1072#1079#1072#1090#1100' '#1073#1088#1072#1091#1079#1077#1088
+      OnClick = N2Click
+    end
   end
   object MainTimer: TTimer
     Enabled = False
     Interval = 3000
     OnTimer = MainTimerTimer
-    Left = 152
-    Top = 24
+    Left = 168
+    Top = 8
   end
   object LongTimer: TTimer
     Enabled = False
     Interval = 3600000
     OnTimer = LongTimerTimer
-    Left = 216
-    Top = 24
+    Left = 232
+    Top = 8
   end
   object Tray: TTrayIcon
     Icon.Data = {
@@ -11720,12 +11709,19 @@ object MainForm: TMainForm
       0000000000000000000000000000000000000000000000000000800100008001
       0000C0030000E0070000F81F0000}
     OnClick = TrayClick
-    Left = 264
-    Top = 24
+    Left = 392
+    Top = 8
   end
   object ApplicationEvents: TApplicationEvents
     OnMinimize = ApplicationEventsMinimize
-    Left = 336
-    Top = 24
+    Left = 320
+    Top = 8
+  end
+  object AuthTimer: TTimer
+    Enabled = False
+    Interval = 3000
+    OnTimer = AuthTimerTimer
+    Left = 96
+    Top = 8
   end
 end

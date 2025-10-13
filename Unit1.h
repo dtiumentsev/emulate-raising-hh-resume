@@ -18,23 +18,24 @@
 class TMainForm : public TForm
 {
 __published:	// IDE-managed Components
-	TLabel *HelpLabel;
 	TMainMenu *MainMenu;
 	TMenuItem *N1;
-	TTimer *StartTimer;
 	TTimer *MainTimer;
 	TTimer *LongTimer;
+	TTimer *AuthTimer;
 	TTrayIcon *Tray;
 	TApplicationEvents *ApplicationEvents;
 	TEdgeBrowser *Web;
 	TStatusBar *StatusBar;
-	void __fastcall StartTimerTimer(TObject *Sender);
+	TMenuItem *N2;
 	void __fastcall MainTimerTimer(TObject *Sender);
 	void __fastcall LongTimerTimer(TObject *Sender);
+	void __fastcall AuthTimerTimer(TObject *Sender);
 	void __fastcall ApplicationEventsMinimize(TObject *Sender);
 	void __fastcall TrayClick(TObject *Sender);
 	void __fastcall WebExecuteScript(TCustomEdgeBrowser *Sender, HRESULT AResult, const UnicodeString AResultObjectAsJson);
 	void __fastcall N1Click(TObject *Sender);
+	void __fastcall N2Click(TObject *Sender);
 
 private:	// User declarations
 public:		// User declarations

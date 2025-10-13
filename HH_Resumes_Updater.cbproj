@@ -182,14 +182,16 @@
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Locale>1049</VerInfo_Locale>
         <VerInfo_MajorVer>2</VerInfo_MajorVer>
-        <VerInfo_Release>1</VerInfo_Release>
-        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=2.0.1.0;InternalName=HH Resumes Updater;LegalCopyright=Alexell;LegalTrademarks=;OriginalFilename=HH_Resumes_Updater.exe;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <VerInfo_Keys>CompanyName=;FileDescription=Automatically boost your resume in HeadHunter search results.;FileVersion=2.1.0.1;InternalName=HH Resumes Updater;LegalCopyright=Alexell;LegalTrademarks=;OriginalFilename=HH_Resumes_Updater.exe;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=HeadHunter Resumes Updater;ProductVersion=2.1;Comments=</VerInfo_Keys>
         <Icon_MainIcon>HH_Resumes_Updater_Icon.ico</Icon_MainIcon>
         <UWP_CppLogo44>hh-44.png</UWP_CppLogo44>
         <UWP_CppLogo150>hh-150.png</UWP_CppLogo150>
         <DynamicRTL>false</DynamicRTL>
         <LinkPackageStatics>rtl.lib;vcl.lib;vcledge.lib</LinkPackageStatics>
         <UsePackages>false</UsePackages>
+        <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
+        <VerInfo_MinorVer>1</VerInfo_MinorVer>
+        <VerInfo_Build>1</VerInfo_Build>
     </PropertyGroup>
     <ItemGroup>
         <CppCompile Include="HH_Resumes_Updater.cpp">
